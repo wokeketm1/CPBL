@@ -1,11 +1,11 @@
-ï»¿pointfunction=function()
+pointfunction=function()
 {
-##æ¯”åˆ†
+##¤ñ¤À
 pointname<-regexpr("\\):\\(", x)
 point=substr(x,pointname-4,pointname)
 
 
-##å¡«æ»¿æ¯”åˆ†æ•¸pointå…ˆå¡«æ»¿ç¬¬ä¸€ç‹€æ…‹å†å¡«å¾Œé¢
+##¶ñº¡¤ñ¤À¼Æpoint¥ý¶ñº¡²Ä¤@ª¬ºA¦A¶ñ«á­±
 pointmatrix=point[point!=""]
 whichpoint=which(point!="")
 for(i in 1:(whichpoint[1])){

@@ -1,21 +1,21 @@
-ï»¿directionfunction=function(){
+directionfunction=function(){
 
 
 direction=character(length(x))
-direction[grep("[æ¸¸][æ“Š]",x)]="å·¦"
-direction[grep("[ä¸­][å¤–][é‡]",x)]="ä¸­"
-direction[grep("[å·¦][å¤–][é‡]",x)]="å·¦"
-direction[grep("[å³][å¤–][é‡]",x)]="å³"
-direction[grep("[å³][é‚Š]",x)]="å³"
-direction[grep("[å·¦][é‚Š]",x)]="å·¦"
-direction[grep("[ä¸­][é–“]",x)]="ä¸­"
-direction[grep("[å…§][é‡]",x)]="å…§"
+direction[grep("[´å][À»]",x)]="¥ª"
+direction[grep("[¤¤][¥~][³¥]",x)]="¤¤"
+direction[grep("[¥ª][¥~][³¥]",x)]="¥ª"
+direction[grep("[¥k][¥~][³¥]",x)]="¥k"
+direction[grep("[¥k][Ãä]",x)]="¥k"
+direction[grep("[¥ª][Ãä]",x)]="¥ª"
+direction[grep("[¤¤][¶¡]",x)]="¤¤"
+direction[grep("[¤º][³¥]",x)]="¤º"
 
 xxx=substr(x,regexpr("[:]", x),regexpr("[:]", x)+100)
-direction[grep("[L][F]",xxx)]="å·¦"
-direction[grep("[C][F]",xxx)]="ä¸­"
-direction[grep("[R][F]",xxx)]="å³"
-direction[grep("[æŠ•][æ‰‹][æ­£][å‰][æ–¹]",xxx)]="å…§"
+direction[grep("[L][F]",xxx)]="¥ª"
+direction[grep("[C][F]",xxx)]="¤¤"
+direction[grep("[R][F]",xxx)]="¥k"
+direction[grep("[§ë][¤â][¥¿][«e][¤è]",xxx)]="¤º"
 
 
 

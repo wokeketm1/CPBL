@@ -1,24 +1,24 @@
-ï»¿outfunction=function(){
+outfunction=function(){
 
 out=character(length(x))
-out[grep("[ä¸€][å‡º][å±€]",x)]="ä¸€å‡ºå±€"
-out[grep("[äºŒ][å‡º][å±€]",x)]="äºŒå‡ºå±€"
-out[grep("[ä¸‰][å‡º][å±€]",x)]="ä¸‰å‡ºå±€"
-out[grep("[ä¸€][äºº][å‡º][å±€]",x)]="ä¸€å‡ºå±€"
-out[grep("[äºŒ][äºº][å‡º][å±€]",x)]="äºŒå‡ºå±€"
-out[grep("[ä¸‰][äºº][å‡º][å±€]",x)]="ä¸‰å‡ºå±€"
+out[grep("[¤@][¥X][§½]",x)]="¤@¥X§½"
+out[grep("[¤G][¥X][§½]",x)]="¤G¥X§½"
+out[grep("[¤T][¥X][§½]",x)]="¤T¥X§½"
+out[grep("[¤@][¤H][¥X][§½]",x)]="¤@¥X§½"
+out[grep("[¤G][¤H][¥X][§½]",x)]="¤G¥X§½"
+out[grep("[¤T][¤H][¥X][§½]",x)]="¤T¥X§½"
 
-##ä¸Šä¸‹å±€åœ¨å“ª
-up=substr(x,regexpr("[1-9][ä¸Š]", x),regexpr("[1-9][ä¸Š]", x)+1)
-down=substr(x,regexpr("[1-9][ä¸‹]", x),regexpr("[1-9][ä¸‹]", x)+1)
+##¤W¤U§½¦b­þ
+up=substr(x,regexpr("[1-9][¤W]", x),regexpr("[1-9][¤W]", x)+1)
+down=substr(x,regexpr("[1-9][¤U]", x),regexpr("[1-9][¤U]", x)+1)
 inningbyfollow.up=paste0(up,down)
 text=inningbyfollow.up[inningbyfollow.up!=""]
 changeinning=which((inningbyfollow.up!=""))
 
-#è£œç©ºç™½é›¶å‡ºå±€ç”¨
-out[changeinning]="é›¶å‡ºå±€"
+#¸ÉªÅ¥Õ¹s¥X§½¥Î
+out[changeinning]="¹s¥X§½"
 
-#è£œå…¶é¤˜ç©ºç™½
+#¸É¨ä¾lªÅ¥Õ
 for (i in 1:length(out)){
 if (out[i]==""){out[i]=out[i-1]}
 }

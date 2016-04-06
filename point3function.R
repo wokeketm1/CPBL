@@ -1,4 +1,4 @@
-ï»¿point3function=function()
+point3function=function()
 {
 pointname<-regexpr("\\):\\(", x)
 point=substr(x,pointname-4,pointname)
@@ -11,7 +11,7 @@ if(point[i]!=""){point3[i]=point2[i]
 }
 
 
-##å¡«æ»¿æ¯”åˆ†æ•¸point3å…ˆå¡«æ»¿ç¬¬ä¸€ç‹€æ…‹å†å¡«å¾Œé¢
+##¶ñº¡¤ñ¤À¼Æpoint3¥ý¶ñº¡²Ä¤@ª¬ºA¦A¶ñ«á­±
 point3matrix=point3[point3!=""]
 whichpoint3=which(point3!="")
 for(i in 1:(whichpoint3[1])){
