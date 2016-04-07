@@ -7,7 +7,7 @@ library(taRifx)
 
 output <- NULL
 
-for (i in 1:100){
+for (i in 1:200){
 numforgame <- paste0(i)
 x <- readLines(paste0("C:/Users/Student/Desktop/input/ㄒ︽辽",numforgame,"(2014org).txt"),encoding="UTF-8")
 ##参Α
@@ -16,6 +16,7 @@ x <- gsub("",replacement=":",x)
 x <- gsub("\\",replacement="\\(",x)
 x <- gsub(" ",replacement="",x)
 x <- gsub("Lamigo丰钉",replacement="丰",x)
+x <- gsub("Lamigo丰",replacement="丰",x)
 x <- gsub("Lamigo丰",replacement="丰",x)
 x <- gsub("Lamigoo",replacement="丰",x)
 x <- gsub("Lamigo",replacement="丰",x)
@@ -25,6 +26,7 @@ x <- gsub("参7-ELEVEn粪",replacement="参",x)
 x <- gsub("参7ELEVEn粪",replacement="参",x)
 x <- gsub("参粪",replacement="参",x)
 x <- gsub("い獺",replacement="",x)
+x <- gsub("禜",replacement="",x)
 x <- gsub("竡礡",replacement="竡",x)
 x <- gsub("EDA",replacement="竡",x)
 x <- gsub("耂も",replacement="1B",x)
@@ -46,6 +48,20 @@ x <- gsub("6次",replacement="せ次",x)
 x <- gsub("7次",replacement="次",x)
 x <- gsub("8次",replacement="次",x)
 x <- gsub("9次",replacement="次",x)
+x <- gsub("",replacement="0",x)
+x <- gsub("",replacement="1",x)
+x <- gsub("⒈",replacement="2",x)
+x <- gsub("⒉",replacement="3",x)
+x <- gsub("⒊",replacement="4",x)
+x <- gsub("⒋",replacement="5",x)
+x <- gsub("⒌",replacement="6",x)
+x <- gsub("⒍",replacement="7",x)
+x <- gsub("⒎",replacement="8",x)
+x <- gsub("⒏",replacement="9",x)
+
+
+
+
 
 rowforgame <- c(1:length(x))
 inning     <- inningfunction()
@@ -54,8 +70,8 @@ Base1      <- cbind(c(1:length(x)),c("NA"))[,2]
 Base2      <- cbind(c(1:length(x)),c("NA"))[,2]              
 Base3      <- cbind(c(1:length(x)),c("NA"))[,2]              
 out        <- outfunction()
-away      <- pointfunction()
-home     <- point3function()
+away       <- pointfunction()
+home       <- point3function()
 Player     <- Playerfunction()
 direction  <- directionfunction()	    
 result     <- cbind(c(1:length(x)),c("NA"))[,2]          
@@ -68,5 +84,5 @@ output <- rbind(output,outputmatrix)
 print(output)
 
 #块
-#write.csv(output,paste0("C:/Users/Student/Desktop/output/output.csv"),row.names=FALSE)
+#write.csv(output,paste0("C:/Users/Student/Desktop/output/output0407.csv"),row.names=FALSE)
 

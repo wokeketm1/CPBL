@@ -152,6 +152,14 @@ for(i in (which(inning==text[17])):(which(inning==text[(18)])-1)){
 for(i in (which(inning==text[18])):length(inning)){
     if(inning[i]==""){inning[i]=text[18]}
     }
+
+
+#9¤W
+}else if (length(text)==17){
+
+for(i in (which(inning==text[17])):length(inning)){
+    if(inning[i]==""){inning[i]=text[17]}
+    }
 }else{print("inningfunction!WRONG!")}
 
 return(inning)
