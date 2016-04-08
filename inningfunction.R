@@ -4,8 +4,8 @@ inningfunction=function()
 ##上下局
 
 up=character(length(x))
-up[grep("[0-9][上]",x)]=x[grep("[0-9][上]",x)]
 down=character(length(x))
+up[grep("[0-9][上]",x)]=x[grep("[0-9][上]",x)]
 down[grep("[0-9][下]",x)]=x[grep("[0-9][下]",x)]
 inning=paste0(up,down)
 
@@ -14,11 +14,11 @@ inning=paste0(up,down)
 text=inning[inning!=""]
 
 if(inning[1]==""){
-for(i in 1:(which(inning=="1上"))){
+for(i in 1:(which(inning==text[1]))){
 if(inning[i]==""){inning[i]="1上"}
 }}
 
-for(i in which(inning=="1上"):which(inning=="9上")){
+for(i in which(inning==text[1]):which(inning==text[17])){
 if(inning[i]==""){inning[i]=inning[i-1]}
 }
 
@@ -161,6 +161,8 @@ for(i in (which(inning==text[17])):length(inning)){
     if(inning[i]==""){inning[i]=text[17]}
     }
 }else{print("inningfunction!WRONG!")}
+
+inning <- gsub("<U+FEFF>1上",replacement="1上",inning)
 
 return(inning)
 }

@@ -107,18 +107,96 @@ follow.up2[i]=follow.up[changeinning[17]-1]-follow.up[changeinning[16]]
 
 
 #125~130 9上 如果有9下
-
-if (text[length(text)]=="9上"){
+text
+if (length(text)==17){
 for (i in changeinning[17]:(length(follow.up2))){
 follow.up2[i]=follow.up[(length(follow.up2))]-follow.up[changeinning[17]]}
 
-}else if(text[length(text)]=="9下"){
+}else if(length(text)==18){
 for (i in changeinning[17]:(changeinning[18]-1)){
 follow.up2[i]=follow.up[changeinning[18]-1]-follow.up[changeinning[17]]}
 for (i in changeinning[18]:(length(follow.up2))){
 follow.up2[i]=follow.up[(length(follow.up2))]-follow.up[changeinning[18]]}
 
-}else{print("WRONG")}
+}else if(length(text)==19){
+for (i in changeinning[17]:(changeinning[18]-1)){
+follow.up2[i]=follow.up[changeinning[18]-1]-follow.up[changeinning[17]]}
+for (i in changeinning[18]:(changeinning[19]-1)){
+follow.up2[i]=follow.up[changeinning[19]-1]-follow.up[changeinning[18]]}
+for (i in changeinning[19]:(length(follow.up2))){
+follow.up2[i]=follow.up[(length(follow.up2))]-follow.up[changeinning[19]]}
+
+}else if(length(text)==20){
+for (i in changeinning[17]:(changeinning[18]-1)){
+follow.up2[i]=follow.up[changeinning[18]-1]-follow.up[changeinning[17]]}
+for (i in changeinning[18]:(changeinning[19]-1)){
+follow.up2[i]=follow.up[changeinning[19]-1]-follow.up[changeinning[18]]}
+for (i in changeinning[19]:(changeinning[20]-1)){
+follow.up2[i]=follow.up[changeinning[20]-1]-follow.up[changeinning[19]]}
+for (i in changeinning[20]:(length(follow.up2))){
+follow.up2[i]=follow.up[(length(follow.up2))]-follow.up[changeinning[20]]}
+
+}else if(length(text)==21){
+for (i in changeinning[17]:(changeinning[18]-1)){
+follow.up2[i]=follow.up[changeinning[18]-1]-follow.up[changeinning[17]]}
+for (i in changeinning[18]:(changeinning[19]-1)){
+follow.up2[i]=follow.up[changeinning[19]-1]-follow.up[changeinning[18]]}
+for (i in changeinning[19]:(changeinning[20]-1)){
+follow.up2[i]=follow.up[changeinning[20]-1]-follow.up[changeinning[19]]}
+for (i in changeinning[20]:(changeinning[21]-1)){
+follow.up2[i]=follow.up[changeinning[21]-1]-follow.up[changeinning[20]]}
+for (i in changeinning[21]:(length(follow.up2))){
+follow.up2[i]=follow.up[(length(follow.up2))]-follow.up[changeinning[21]]}
+
+}else if(length(text)==22){
+for (i in changeinning[17]:(changeinning[18]-1)){
+follow.up2[i]=follow.up[changeinning[18]-1]-follow.up[changeinning[17]]}
+for (i in changeinning[18]:(changeinning[19]-1)){
+follow.up2[i]=follow.up[changeinning[19]-1]-follow.up[changeinning[18]]}
+for (i in changeinning[19]:(changeinning[20]-1)){
+follow.up2[i]=follow.up[changeinning[20]-1]-follow.up[changeinning[19]]}
+for (i in changeinning[20]:(changeinning[21]-1)){
+follow.up2[i]=follow.up[changeinning[21]-1]-follow.up[changeinning[20]]}
+for (i in changeinning[21]:(changeinning[22]-1)){
+follow.up2[i]=follow.up[changeinning[22]-1]-follow.up[changeinning[21]]}
+for (i in changeinning[22]:(length(follow.up2))){
+follow.up2[i]=follow.up[(length(follow.up2))]-follow.up[changeinning[22]]}
+
+}else if(length(text)==23){
+for (i in changeinning[17]:(changeinning[18]-1)){
+follow.up2[i]=follow.up[changeinning[18]-1]-follow.up[changeinning[17]]}
+for (i in changeinning[18]:(changeinning[19]-1)){
+follow.up2[i]=follow.up[changeinning[19]-1]-follow.up[changeinning[18]]}
+for (i in changeinning[19]:(changeinning[20]-1)){
+follow.up2[i]=follow.up[changeinning[20]-1]-follow.up[changeinning[19]]}
+for (i in changeinning[20]:(changeinning[21]-1)){
+follow.up2[i]=follow.up[changeinning[21]-1]-follow.up[changeinning[20]]}
+for (i in changeinning[21]:(changeinning[22]-1)){
+follow.up2[i]=follow.up[changeinning[22]-1]-follow.up[changeinning[21]]}
+for (i in changeinning[22]:(changeinning[23]-1)){
+follow.up2[i]=follow.up[changeinning[23]-1]-follow.up[changeinning[22]]}
+for (i in changeinning[23]:(length(follow.up2))){
+follow.up2[i]=follow.up[(length(follow.up2))]-follow.up[changeinning[23]]}
+
+}else if(length(text)==24){
+for (i in changeinning[17]:(changeinning[18]-1)){
+follow.up2[i]=follow.up[changeinning[18]-1]-follow.up[changeinning[17]]}
+for (i in changeinning[18]:(changeinning[19]-1)){
+follow.up2[i]=follow.up[changeinning[19]-1]-follow.up[changeinning[18]]}
+for (i in changeinning[19]:(changeinning[20]-1)){
+follow.up2[i]=follow.up[changeinning[20]-1]-follow.up[changeinning[19]]}
+for (i in changeinning[20]:(changeinning[21]-1)){
+follow.up2[i]=follow.up[changeinning[21]-1]-follow.up[changeinning[20]]}
+for (i in changeinning[21]:(changeinning[22]-1)){
+follow.up2[i]=follow.up[changeinning[22]-1]-follow.up[changeinning[21]]}
+for (i in changeinning[22]:(changeinning[23]-1)){
+follow.up2[i]=follow.up[changeinning[23]-1]-follow.up[changeinning[22]]}
+for (i in changeinning[23]:(changeinning[24]-1)){
+follow.up2[i]=follow.up[changeinning[24]-1]-follow.up[changeinning[23]]}
+for (i in changeinning[24]:(length(follow.up2))){
+follow.up2[i]=follow.up[(length(follow.up2))]-follow.up[changeinning[24]]}
+
+}else{print("follow.upfunctionWRONG")}
 
 
 return(follow.up2)

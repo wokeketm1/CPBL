@@ -57,6 +57,15 @@ point3 <- gsub("9",replacement="(9)",point3)
 
 }else(print("point3WRONG!!!"))
 
+if(length(grep("^[大]",point3))!=0){
+point3[grep("^[大]",point)] <- gsub("大",replacement="義大",point3[grep("^[大]",point3)])
+}else if(length(grep("^[一]",point3))!=0){
+point3[grep("^[一]",point)] <- gsub("一",replacement="統一",point3[grep("^[一]",point3)])
+}else if(length(grep("^[弟]",point3))!=0){
+point3[grep("^[弟]",point)] <- gsub("弟",replacement="兄弟",point3[grep("^[弟]",point3)])
+}else if(length(grep("^[牛]",point3))!=0){
+point3[grep("^[牛]",point)] <- gsub("牛",replacement="犀牛",point3[grep("^[牛]",point3)])
+}
 
 
 
