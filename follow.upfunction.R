@@ -17,8 +17,8 @@ changeinning=which((inningbyfollow.up!=""))
 
 
 #抓比分
-awaypoint=substr(away,regexpr("[0-9]", away),regexpr("[0-9]", away))%>%as.numeric()
-homepoint=substr(home,regexpr("[0-9]", home),regexpr("[0-9]", home))%>%as.numeric()
+awaypoint=substr(away,regexpr("[(]", away)+1,regexpr("[)]", away)-1)%>%as.numeric()
+homepoint=substr(home,regexpr("[(]", home)+1,regexpr("[)]", home)-1)%>%as.numeric()
 
 
 follow.up=awaypoint
@@ -26,20 +26,20 @@ follow.up[grep("[下]",inning)]=homepoint[grep("[下]",inning)]
 follow.up2=numeric(length(follow.up))
 
 
-#1~7 一上
+#1~7 1上
 for (i in (changeinning[1]):(changeinning[2]-1)){
 follow.up2[i]=follow.up[changeinning[2]-1]-follow.up[changeinning[1]]
 }
-#8~13 一下
+#8~13 1下
 for (i in changeinning[2]:(changeinning[3]-1)){
 follow.up2[i]=follow.up[changeinning[3]-1]-follow.up[changeinning[2]]
 }
-#14~18 二上
+#14~18 2上
 for (i in changeinning[3]:(changeinning[4]-1)){
 follow.up2[i]=follow.up[changeinning[4]-1]-follow.up[changeinning[3]]
 }
 
-#19~27 二下
+#19~27 2下
 for (i in (changeinning[4]):(changeinning[5]-1)){
 follow.up2[i]=((follow.up[(changeinning[5]-1)])-(follow.up[(changeinning[4])]))
 }

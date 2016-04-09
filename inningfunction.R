@@ -18,11 +18,23 @@ for(i in 1:(which(inning==text[1]))){
 if(inning[i]==""){inning[i]="1上"}
 }}
 
-for(i in which(inning==text[1]):which(inning==text[17])){
+#判斷是否有中途停止比賽 if
+if(length(grep("[9][上]",inning))==0){
+
+#舉例94場只有到6下 一上>六下
+for(i in which(inning==text[1]):which(inning==(text[length(text)]))){
+if(inning[i]==""){inning[i]=inning[i-1]}
+}
+for(i in 1:length(inning)){
 if(inning[i]==""){inning[i]=inning[i-1]}
 }
 
+# else 9下到12下
+}else{
 
+for(i in which(inning==text[1]):which(inning==text[17])){
+if(inning[i]==""){inning[i]=inning[i-1]}
+}
 #12下
 if(length(text)==24){
 for(i in (which(inning==text[17])):(which(inning==text[(18)])-1)){
@@ -162,7 +174,9 @@ for(i in (which(inning==text[17])):length(inning)){
     }
 }else{print("inningfunction!WRONG!")}
 
-inning <- gsub("<U+FEFF>1上",replacement="1上",inning)
+}
+
+
 
 return(inning)
 }

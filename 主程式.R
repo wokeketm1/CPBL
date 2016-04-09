@@ -1,6 +1,4 @@
 library(tm)
-library(rJava)
-library(wordcloud)
 library(dplyr)
 library(plyr)
 library(taRifx)
@@ -28,7 +26,7 @@ away       <- pointfunction()
 home       <- point3function()
 Player     <- Playerfunction()
 direction  <- directionfunction()	    
-result     <- cbind(c(1:length(x)),c("NA"))[,2]          
+result     <- resultfunction()          
 follow.up  <- follow.upfunction()
        
 outputmatrix <- cbind(numforgame,rowforgame,inning,id,Base1,Base2,Base3,out,away,home,Player,direction,result,follow.up)
@@ -38,5 +36,5 @@ output <- rbind(output,outputmatrix)
 #print(output)
 
 #¿é¥X
-write.csv(output,paste0("C:/Users/Student/Desktop/output/output04085.csv"),row.names=FALSE)
+write.csv(output,paste0("C:/Users/Student/Desktop/output/output04092.csv"),row.names=FALSE)
 
