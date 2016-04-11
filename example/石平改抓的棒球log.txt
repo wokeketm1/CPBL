@@ -1,15 +1,3 @@
-directionfunction=function(){
-
-
-direction=character(length(x))
-direction[grep("[游][擊]",x)]="左"
-direction[grep("[中][外][野]",x)]="中"
-direction[grep("[左][外][野]",x)]="左"
-direction[grep("[右][外][野]",x)]="右"
-direction[grep("[右][邊]",x)]="右"
-direction[grep("[左][邊]",x)]="左"
-direction[grep("[中][間]",x)]="中"
-direction[grep("[內][野]",x)]="內"
 direction[grep("[遊][擊][手][接][殺]",x)]="內"
 direction[grep("[三][壘][手][接][殺]",x)]="內"
 direction[grep("[二][壘][手][接][殺]",x)]="內"
@@ -53,15 +41,13 @@ direction[grep("[一][壘][上][空][飛][球]",x)]="內"
 direction[grep("[二][壘][上][空][飛][球]",x)]="內"
 direction[grep("[三][壘][上][空][飛][球]",x)]="內"
 
-xxx=substr(x,regexpr("[:]", x),regexpr("[:]", x)+100)
-direction[grep("[L][F]",xxx)]="左"
-direction[grep("[C][F]",xxx)]="中"
-direction[grep("[R][F]",xxx)]="右"
-direction[grep("[投][手][正][前][方]",xxx)]="內"
+
+二壘手接球失誤 ; 例行賽119 行100
+四壞球保送，跑者分佔一、二壘 ; 例行賽119 行98
+三振，三出局 ; 例行賽119 行94
+投手接到傳向一壘刺殺打者 ; 例行賽119 行78
+觸身球保送 ; 例行賽119 行54
+
+*「三振」沒有被抓出來，跑到"方向"欄去。
 
 
-
-
-return(direction)
-
-}

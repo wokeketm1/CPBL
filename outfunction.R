@@ -1,11 +1,11 @@
 outfunction=function(){
 
 out=character(length(x))
-out[grep("[一][出][局]",x)]="一出局"
-out[grep("[二][出][局]",x)]="二出局"
+out[grep("[一][出][局]",x)+1]="一出局"
+out[grep("[二][出][局]",x)+1]="二出局"
 out[grep("[三][出][局]",x)]="三出局"
-out[grep("[一][人][出][局]",x)]="一出局"
-out[grep("[二][人][出][局]",x)]="二出局"
+out[grep("[一][人][出][局]",x)+1]="一出局"
+out[grep("[二][人][出][局]",x)+1]="二出局"
 out[grep("[三][人][出][局]",x)]="三出局"
 
 ##上下局在哪
@@ -23,6 +23,8 @@ for (i in 1:length(out)){
 if (out[i]==""){out[i]=out[i-1]}
 }
 
+
+out=gsub("三出局",replacement="二出局",out)
 
 return(out)
 }
