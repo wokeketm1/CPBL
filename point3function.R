@@ -57,14 +57,14 @@ point3 <- gsub("9",replacement="(9)",point3)
 
 }else(print("point3WRONG!!!"))
 
-if(length(grep("^[]",point3))!=0){
-point3[grep("^[]",point)] <- gsub("",replacement="竡",point3[grep("^[]",point3)])
-}else if(length(grep("^[]",point3))!=0){
-point3[grep("^[]",point)] <- gsub("",replacement="参",point3[grep("^[]",point3)])
-}else if(length(grep("^[]",point3))!=0){
-point3[grep("^[]",point)] <- gsub("",replacement="",point3[grep("^[]",point3)])
-}else if(length(grep("^[]",point3))!=0){
-point3[grep("^[]",point)] <- gsub("",replacement="礡",point3[grep("^[]",point3)])
+if(length(grep("[竡]$",point3))!=0){
+point3[grep("[竡]$",point3)] <- gsub("竡",replacement="竡",point3[grep("[竡]$",point3)])
+}else if(length(grep("[参]$",point3))!=0){
+point3[grep("[参]$",point3)] <- gsub("参",replacement="参",point3[grep("[参]$",point3)])
+}else if(length(grep("[]$",point3))!=0){
+point3[grep("[]$",point3)] <- gsub("",replacement="",point3[grep("[]$",point3)])
+}else if(length(grep("[]$",point3))!=0){
+point3[grep("[]$",point3)] <- gsub("",replacement="丰",point3[grep("[]$",point3)])
 }
 
 
