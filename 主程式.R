@@ -1,4 +1,3 @@
-#library
 library(tm)
 library(dplyr)
 library(plyr)
@@ -12,14 +11,13 @@ for(i in 1:length(sourceuse)){
 source(paste0("C:\\Users\\Student\\Desktop\\專題\\CPBL\\棒球分類表格化\\04130\\",sourceuse[i],".R"))
 }
 
-#例行賽215 局數有問題
-#例行賽120 局數有問題 
-#例行賽94 局數有問題
-#例行賽64 九上誤植成九下
-#例行賽114 69列分數登記有誤
+
+#程式碼從這邊開始--------------------------------------------------------------------------------------------
+#例行賽94,120,215 局數有問題 #例行賽64 九上誤植成九下#例行賽114 69列分數登記有誤
 inningnoproblem<-c(1:63,65:93,95:119,121:214,216:240)
 output <- NULL
 
+#迴圈開始-----
 for (i in inningnoproblem){
 
 #讀取資料
@@ -29,7 +27,7 @@ x <- readLines(paste0("C:/Users/Student/Desktop/input/例行賽",numforgame,"(2014o
 #統一格式
 x          <- dictionaryfunction()
 
-#各col
+#各爛位
 rowforgame <- c(1:length(x))
 specialcircumstances <- specialcircumstancesfunction()
 inning     <- inningfunction()
@@ -49,8 +47,8 @@ log        <- x
 outputmatrix <- cbind(numforgame,rowforgame,specialcircumstances,inning,id,Base1,Base2,Base3,out,away,home,Player,direction,result,follow.up,log)
 output <- rbind(output,outputmatrix)
 }
+#迴圈結束------
 
-#print(output)
 #輸出
-write.csv(output,paste0("C:/Users/Student/Desktop/output/output04134.csv"),row.names=FALSE)
+write.csv(output,paste0("C:/Users/Student/Desktop/output/output04146.csv"),row.names=FALSE)
 

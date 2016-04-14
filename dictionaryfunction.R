@@ -118,7 +118,15 @@ x <- gsub("Ы",replacement="Ы",x)
 x <- gsub("Ы",replacement="Ы",x)
 x <- gsub("ㄢЫ",replacement="Ы",x)
 x <- gsub("Ы",replacement="Ы",x)
-
+x <- gsub("材1次",replacement="材次",x)
+x <- gsub("材2次",replacement="材次",x)
+x <- gsub("材3次",replacement="材次",x)
+x <- gsub("材4次",replacement="材次",x)
+x <- gsub("材5次",replacement="材き次",x)
+x <- gsub("材6次",replacement="材せ次",x)
+x <- gsub("材7次",replacement="材次",x)
+x <- gsub("材8次",replacement="材次",x)
+x <- gsub("材9次",replacement="材次",x)
 
 return(x)
 }
