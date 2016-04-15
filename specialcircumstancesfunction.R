@@ -12,12 +12,14 @@ specialcircumstances=
 grepl(".*[，].*[，].*[，]",x) |
 grepl("[暴][投]",x) |
 grepl("[暴][傳]",x) |
-grepl("[失][誤]",x) #|
-#grep("[出][局].*[盜][上]",x) |
-#grep("[打].*[盜]",x)
+grepl("[失][誤]",x) |
+grepl("[出][局].*[盜][上]",x) | 
+grepl("[打].*[盜]",x)|
+grepl("[保][送].*[盜]",x)|
+grepl("[盜].*[保][送]",x)
 
+#:....):(.... 第3後面有中文 [義統兄桃][大一弟猿][\\(][0-9]*[0-9][\\)][:][\\(][0-9]*[0-9][\\)][義統兄桃][大一弟猿]
 
-#:....):(.... 第3後面有中文
 
 
 #wherespecialcircumstances=which(specialcircumstances==TRUE)

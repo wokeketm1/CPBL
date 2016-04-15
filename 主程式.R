@@ -8,7 +8,7 @@ sourceuse=c("dictionaryfunction","directionfunction","follow.upfunction","idfunc
 "point3function","pointfunction","resultfunction","specialcircumstancesfunction"
 )
 for(i in 1:length(sourceuse)){
-source(paste0("C:\\Users\\Student\\Desktop\\專題\\CPBL\\棒球分類表格化\\04130\\",sourceuse[i],".R"))
+source(paste0("C:\\Users\\Student\\Desktop\\專題\\CPBL\\棒球分類表格化\\04150\\",sourceuse[i],".R"))
 }
 
 
@@ -27,7 +27,7 @@ x <- readLines(paste0("C:/Users/Student/Desktop/input/例行賽",numforgame,"(2014o
 #統一格式
 x          <- dictionaryfunction()
 
-#各爛位
+#各欄位
 rowforgame <- c(1:length(x))
 specialcircumstances <- specialcircumstancesfunction()
 inning     <- inningfunction()
@@ -50,5 +50,5 @@ output <- rbind(output,outputmatrix)
 #迴圈結束------
 
 #輸出
-write.csv(output,paste0("C:/Users/Student/Desktop/output/output04146.csv"),row.names=FALSE)
+write.csv(output,paste0("C:/Users/Student/Desktop/output/output04154.csv"),row.names=FALSE)
 
