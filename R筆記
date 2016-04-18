@@ -1,0 +1,11 @@
+#讀取用
+setwd("D:/VE")
+getwd()
+logname<-list.files("D:/VE", pattern="*.csv")
+
+for(i in 1:length(logname)){
+xlog<-read.csv(paste0("D:/VE/",logname[i]))
+x<-cbind(xlog,c(logname[i]))
+output<-paste0(logname[i])
+assign(output,x)
+}
