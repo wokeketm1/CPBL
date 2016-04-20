@@ -5,10 +5,9 @@ library(taRifx)
 # 1. source all functions
 # remember add encoding = "UTF-8"
 source_all = function() {
-  c_function_name<-list.files("D:/cpbl_project/offensive_db/functions", pattern="*.R")
+  c_function_name<-list.files("D:/CPBL/offensive_db/functions", pattern="*.R")
   for (i in 1:length(c_function_name)) {
-    # function_path <- paste0("/Users/shipo/Documents/cpbl_project/offensive_db/functions/", c_function_name[i])
-    function_path <- paste0("D:/cpbl_project/offensive_db/functions/", c_function_name[i])
+    function_path <- paste0("D:/CPBL/offensive_db/functions/", c_function_name[i])
     source(function_path, encoding = "UTF-8")
   }
 }
@@ -16,8 +15,7 @@ source_all()
 # 2. run the single_game function
 main_single_game = function(num_logfile) {
   # 2-1.load log_file
-  # log_path <- paste0("/Users/shipo/Documents/cpbl_project/logs/2014/例行賽", as.character(num_logfile), "(2014org).txt")
-  log_path <- paste0("D:/cpbl_project/logs/2014/例行賽", as.character(num_logfile), "(2014org).txt")
+  log_path <- paste0("D:/CPBL/logs/2014/例行賽", as.character(num_logfile), "(2014org).txt")
   log_file <- readLines(log_path, encoding = "UTF-8")
   log_file <- normalize_log_function(log_file)
   # 2-2. dummy list
@@ -96,7 +94,7 @@ for (i in inningnoproblem){
   
   #讀取資料
   numforgame <- paste0(i)
-  x <- readLines(paste0("D:/cpbl_project/logs/2014/例行賽",numforgame,"(2014org).txt"),encoding="UTF-8")
+  x <- readLines(paste0("D:/CPBL/logs/2014/例行賽",numforgame,"(2014org).txt"),encoding="UTF-8")
   
   #統一格式
   x          <- dictionaryfunction()
@@ -130,7 +128,7 @@ for (i in inningnoproblem){
 output2<-NULL
 extragame<-c(43,64,215,120,94)
 for (i in 1:length(extragame)){
-x <- readLines(paste0("D:/cpbl_project/logs/2014/例行賽",extragame[i],"(2014org).txt"),encoding="UTF-8")
+x <- readLines(paste0("D:/CPBL/logs/2014/例行賽",extragame[i],"(2014org).txt"),encoding="UTF-8")
 #統一格式
 x          <- dictionaryfunction()
 #各欄位
