@@ -1,0 +1,36 @@
+if(ЫЫ计==硂ЫЫ计 && ⊿Τ疭篈(ex.祍耂)){ //牟祇э耂禲
+
+
+if(ЫΤ胊瞴玂癳牟ō玂癳){
+	次ゴ硂次"耂"
+}
+
+if(次Τゴ){
+
+	if(ゴ == "耂"){ //耂ゴ耂禲玱禲耂ê﹚穦弧┮璝ゅ痹瓃筁璶疭alertㄓ
+		耂玡ê砞Θ跑计 hitNum;
+		switch(hitNum{
+			1: 次ゴ == 硂次耂;
+			   次耂==硂次耂;
+			   次耂==硂次耂; break;
+			2: 次ゴ == 硂次耂;
+			   次耂==硂次耂; break;
+			3: 次ゴ == 硂次耂; break;
+					
+		}
+	}else{ //糶"ゴ"猵跌耂ゴ
+		次ゴ == 硂次耂;
+		次耂==硂次耂;
+		次耂==硂次耂;
+		}
+}
+
+if(祍耂){
+	ъ祍耂玡方 == 祍耂瞴;
+
+	祍耂瞴┮耂计 + 1 == 祍耂瞴;
+
+	奔瞴┮耂瞴;
+}
+	alertㄓ
+}
