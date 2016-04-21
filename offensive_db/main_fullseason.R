@@ -113,7 +113,7 @@ for (i in inningnoproblem){
   Player     <- Playerfunction()
   direction  <- directionfunction()	    
   result     <- resultfunction()          
-  follow.up  <- follow.upfunction(x)
+  follow.up  <- follow.upfunction()
   log        <- x
   
   outputmatrix <- cbind(numforgame,rowforgame,specialcircumstances,inning,id,Base1,Base2,Base3,out,away,home,Player,direction,result,follow.up,log)
@@ -180,5 +180,5 @@ outputuse<-cbind(writeuse,rowforextra)
 outputuse<-outputuse[,c(1:2,17,4:10,3,11:16)]
 #View(outputuse)
 # 6.Output
-write.csv(outputuse,paste0("C:/Users/Student/Desktop/output/output042103.csv"),row.names=FALSE)
+write.csv(outputuse,paste0("C:/Users/Student/Desktop/output/output042100.csv"),row.names=FALSE)
  
