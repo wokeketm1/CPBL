@@ -111,11 +111,13 @@ for (i in inningnoproblem){
   away       <- pointfunction()
   home       <- point3function()
   Player     <- Playerfunction()
+ # game.player<- game.playerfunction(x,numforgame)
   direction  <- directionfunction()	    
   result     <- resultfunction()          
   follow.up  <- follow.upfunction(x)
   log        <- x
   
+  # outputmatrix <- cbind(numforgame,rowforgame,specialcircumstances,inning,id,Base1,Base2,Base3,out,away,home,Player,game.player,direction,result,follow.up,log)
   outputmatrix <- cbind(numforgame,rowforgame,specialcircumstances,inning,id,Base1,Base2,Base3,out,away,home,Player,direction,result,follow.up,log)
   output1 <- rbind(output1,outputmatrix)
 }
@@ -144,6 +146,7 @@ out        <- cbind(c(1:length(x)),c("NA"))[,2]
 away       <- pointfunction()
 home       <- point3function()
 Player     <- Playerfunction()
+# game.player<- game.playerfunction(x,numforgame)
 direction  <- directionfunction()
 result     <- resultfunction()
 follow.up  <- follow.upfunction(x)
