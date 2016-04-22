@@ -5,9 +5,9 @@ library(taRifx)
 # 1. source all functions
 # remember add encoding = "UTF-8"
 source_all = function() {
-  c_function_name<-list.files("E:/CPBL/offensive_db/functions", pattern="*.R")
+  c_function_name<-list.files("D:/CPBL/offensive_db/functions", pattern="*.R")
   for (i in 1:length(c_function_name)) {
-    function_path <- paste0("E:/CPBL/offensive_db/functions/", c_function_name[i])
+    function_path <- paste0("D:/CPBL/offensive_db/functions/", c_function_name[i])
     source(function_path, encoding = "UTF-8")
   }
 }
@@ -15,7 +15,7 @@ source_all()
 # 2. run the single_game function
 main_single_game = function(num_logfile) {
   # 2-1.load log_file
-  log_path <- paste0("E:/CPBL/logs/2014/例行賽", as.character(num_logfile), "(2014org).txt")
+  log_path <- paste0("D:/CPBL/logs/2014/例行賽", as.character(num_logfile), "(2014org).txt")
   log_file <- readLines(log_path, encoding = "UTF-8")
   log_file <- normalize_log_function(log_file)
   # 2-2. dummy list
@@ -94,7 +94,7 @@ for (i in inningnoproblem){
   
   #讀取資料
   numforgame <- paste0(i)
-  x <- readLines(paste0("E:/CPBL/logs/2014/例行賽",numforgame,"(2014org).txt"),encoding="UTF-8")
+  x <- readLines(paste0("D:/CPBL/logs/2014/例行賽",numforgame,"(2014org).txt"),encoding="UTF-8")
   
   #統一格式
   x          <- dictionaryfunction()
@@ -117,8 +117,8 @@ for (i in inningnoproblem){
   follow.up  <- follow.upfunction(x)
   log        <- x
   
-  # outputmatrix <- cbind(numforgame,rowforgame,specialcircumstances,inning,id,Base1,Base2,Base3,out,away,home,Player,game.player,direction,result,follow.up,log)
   outputmatrix <- cbind(numforgame,rowforgame,specialcircumstances,inning,id,Base1,Base2,Base3,out,away,home,Player,direction,result,follow.up,log)
+  # outputmatrix <- cbind(numforgame,rowforgame,specialcircumstances,inning,id,Base1,Base2,Base3,out,away,home,game.player,direction,result,follow.up,log)
   output1 <- rbind(output1,outputmatrix)
 }
 #迴圈結束------
@@ -130,7 +130,7 @@ for (i in inningnoproblem){
 output2<-NULL
 extragame<-c(43,64,215,120,94)
 for (i in 1:length(extragame)){
-x <- readLines(paste0("E:/CPBL/logs/2014/例行賽",extragame[i],"(2014org).txt"),encoding="UTF-8")
+x <- readLines(paste0("D:/CPBL/logs/2014/例行賽",extragame[i],"(2014org).txt"),encoding="UTF-8")
 #統一格式
 x          <- dictionaryfunction()
 #各欄位
@@ -153,6 +153,7 @@ follow.up  <- follow.upfunction(x)
 log        <- x
 
 outputmatrix <- cbind(numforgame,rowforgame,specialcircumstances,inning,id,Base1,Base2,Base3,out,away,home,Player,direction,result,follow.up,log)
+# outputmatrix <- cbind(numforgame,rowforgame,specialcircumstances,inning,id,Base1,Base2,Base3,out,away,home,game.player,direction,result,follow.up,log)
 
 output2<-rbind(output2,outputmatrix)
 }
@@ -174,15 +175,15 @@ ouputmatrix<-merge2table[,c(1:2,19,5,9:15,20:24,25,3,16)]
 special<-character(length(ouputmatrix[,1]))
 special[union(which(ouputmatrix[,17]==1),which(ouputmatrix[,18]==TRUE))]="warning"
 writeuse<-cbind(ouputmatrix,special)
+
 #排列資料的col
-writeuse<-writeuse[,c(1:16,20,19)]
-writeuse<-writeuse[,c(1:4,6,7,12:15,8,9,10,11,17,18)]
+writeuse<-writeuse[,c(1:3,6,7,12:15,4,8:10,5,11,20,19)]
 #新增rowforextra
 rowforextra<-matrix(1,length(writeuse[,1]))
 outputuse<-cbind(writeuse,rowforextra)
-outputuse<-outputuse[,c(1:2,17,3,5:10,4,11:16)]
+outputuse<-outputuse[,c(1:2,18,3:17)]
 
 #View(head(outputuse))
 # 6.Output
-write.csv(outputuse,paste0("C:/Users/howard/Desktop/output/output042106.csv"),row.names=FALSE)
+write.csv(outputuse,paste0("C:/Users/Student/Desktop/output/output042205.csv"),row.names=FALSE)
  

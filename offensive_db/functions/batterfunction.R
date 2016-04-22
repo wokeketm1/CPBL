@@ -1,6 +1,6 @@
 batterfunction<-function(){
 #建立球員字庫
-batter<-read.csv("E:/CPBL/logs/2014/batter.csv",encoding = "UTF-8")
+batter<-read.csv("D:/CPBL/logs/2014/batter.csv",encoding = "UTF-8")
 playername<-batter[,3]
 
 #對球員作處理只留下名字
