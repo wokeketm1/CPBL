@@ -1,3 +1,4 @@
+#1
 #讀取用
 setwd("D:/VE")
 getwd()
@@ -10,8 +11,18 @@ output<-paste0(logname[i])
 assign(output,x)
 }
 
-
+#2
 #R by mscmd https://www.youtube.com/watch?v=A1IIcZW5UrI
 #http://stackoverflow.com/questions/5604698/java-programming-call-an-exe-from-java-and-passing-parameters
 #上面內容的java改寫
 #Process process = new ProcessBuilder("C:\\PathToExe\\Rscript.exe","xxx.R","params").start();
+
+
+#3
+.e <- list()
+f <- function() {
+  .e$a <- 1
+  browser()
+}
+f()
+.e$a
