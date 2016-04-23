@@ -10,7 +10,7 @@ hit1_function = function(dummy_list, log_row) {
   
 
   hit1_type <- c("一壘安打", "左外野安打", "中外野安打", "右外野安打", 
-                 "穿越安打", "平飛安打", "內野安打", "中間方向安打", "德州安打")
+                 "穿越安打", "平飛安打", "內野安打", "中間方向安打", "德州安打", "滾地安打", "不死三振")
   
   # 將上面的類型都跑過
   for (i in 1:length(hit1_type)) {
@@ -33,7 +33,7 @@ hit1_function = function(dummy_list, log_row) {
             # 1B to 1B_2B
             rem_type <- rem_type + 9
             
-                if (grepl("一分",log_row)){
+                if (grepl("一分",log_row) || grepl("1分",log_row)){
                   #extrabase_function
                       if (base3 != "NA"){
                         base3 = "NA"
@@ -50,10 +50,18 @@ hit1_function = function(dummy_list, log_row) {
                           base1 = "NA"
                         }
                       }
-                    
+                #1B_2B to 1B
                 rem_type <- rem_type -9
                 }
-                #1B_2B to 1B
+            
+            #如果壘上跑者積極跑壘
+            if(grepl("一、三",log_row)){
+              base3 <- base2
+              base2 <- "NA"
+              #1B_2B to 1B_3B
+              rem_type <- rem_type + 3
+            }
+            
             
           } else if (rem_type %in% c(7,8,9)) {
             base3 <- base2
@@ -62,7 +70,7 @@ hit1_function = function(dummy_list, log_row) {
             # 2B to 1B_3B
             rem_type <- rem_type + 9
               
-                if (grepl("一分",log_row)){
+                if (grepl("一分",log_row) || grepl("1分",log_row)){
                   #extrabase_function
                   if (base3 != "NA"){
                     base3 = "NA"
@@ -97,7 +105,7 @@ hit1_function = function(dummy_list, log_row) {
             # 1B_2B to 1B_2B_3B
             rem_type <- rem_type + 9
               
-                if (grepl("一分",log_row)){
+                if (grepl("一分",log_row) || grepl("1分",log_row)){
                   #extrabase_function
                   if (base3 != "NA"){
                     base3 = "NA"
@@ -117,7 +125,7 @@ hit1_function = function(dummy_list, log_row) {
                   rem_type <- rem_type - 9
                   #1B_2B_3B to 1B_2B 
                   
-                }else if(grepl("二分",log_row) || grepl("兩分",log_row)){
+                }else if(grepl("二分",log_row) || grepl("兩分",log_row) || grepl("2分",log_row)){
                   #extrabase_function
                   if (base3 != "NA"){
                     base3 = "NA"
@@ -155,7 +163,7 @@ hit1_function = function(dummy_list, log_row) {
             # 2B_3B to 1B_3B
             rem_type <- rem_type - 3
                 
-                if(grepl("二分",log_row)||grepl("兩分",log_row)){
+                if(grepl("二分",log_row) || grepl("兩分",log_row) || grepl("2分",log_row)){
                   #extrabase_function
                   if (base3 != "NA"){
                     base3 = "NA"
@@ -183,7 +191,7 @@ hit1_function = function(dummy_list, log_row) {
             base1 <- player
             # 1B_2B_3B to 1B_2B_3B, rem_type no change
             
-                if (grepl("兩分",log_row) || grepl("二分",log_row)){
+                if (grepl("兩分",log_row) || grepl("二分",log_row) || grepl("2分",log_row)){
                   #extrabase_function
                   if (base3 != "NA"){
                     base3 = "NA"

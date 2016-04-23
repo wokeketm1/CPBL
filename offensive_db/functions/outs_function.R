@@ -31,7 +31,7 @@ outs_function = function(dummy_list, log_row) {
         base1 <- "NA"
         base2 <- "NA"
         base3 <- "NA"
-        player <- "NA"
+        
       }
 
     # 2 outs            
@@ -40,7 +40,7 @@ outs_function = function(dummy_list, log_row) {
       base1 <- "NA"
       base2 <- "NA"
       base3 <- "NA"
-      player <- "NA"
+      
     }
   } else {
     # do nothing

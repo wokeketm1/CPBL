@@ -34,7 +34,7 @@ hit2_function = function(dummy_list, log_row) {
               rem_type <- rem_type + 15 
               
               #extrabase_function
-              if (grepl("一分",log_row)){
+              if (grepl("一分",log_row) || grepl("1分",log_row)){
                   if (base3 != "NA"){
                     base3 = "NA"
                     
@@ -76,7 +76,7 @@ hit2_function = function(dummy_list, log_row) {
               rem_type <- rem_type + 6
               
               #extrabase_function
-              if (grepl("二分",log_row) || grepl("兩分",log_row)){
+              if (grepl("二分",log_row) || grepl("兩分",log_row) || grepl("2分",log_row)){
                   if (base3 != "NA"){
                     base3 = "NA"
                     
@@ -104,7 +104,7 @@ hit2_function = function(dummy_list, log_row) {
               rem_type <- rem_type + 3
               
               #extrabase_function
-              if (grepl("二分",log_row) || grepl("兩分",log_row)){
+              if (grepl("二分",log_row) || grepl("兩分",log_row) || grepl("2分",log_row)){
                 if (base3 != "NA"){
                   base3 = "NA"
                   
@@ -140,7 +140,7 @@ hit2_function = function(dummy_list, log_row) {
               rem_type <- rem_type - 3
               
               #extrabase_function
-              if (grepl("三分",log_row)){
+              if (grepl("三分",log_row) || grepl("3分",log_row)){
                 if (base3 != "NA"){
                   base3 = "NA"
                   

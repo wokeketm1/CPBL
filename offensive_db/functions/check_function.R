@@ -23,6 +23,11 @@ check_function = function(dummy_list, log_row) {
   }
   if (grepl("盜", log_row)) { dummy_list$to_check <- 1 }
   
+  # 強襲球的判別
+  if (grepl("強襲",log_row)){
+    dummy_list$to_check <- 1
+  }
+  
 
   
   return(dummy_list)
