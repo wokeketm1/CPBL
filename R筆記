@@ -26,3 +26,9 @@ f <- function() {
 }
 f()
 .e$a
+
+
+#4.
+x <- "http://www.mobile01.com/topiclist.php?f=315&p=1"
+txt <- readLines(x, encoding = "UTF-8")
+txt <- txt[grep("<p>", txt)]
