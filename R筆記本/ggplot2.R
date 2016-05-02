@@ -2,10 +2,10 @@
 #http://datasciphm.blogspot.tw/2015/07/ggplot2.html
 library(ggplot)
 
-#+geom_point()  ÂI
-#+geom_line()   ½u
-#+geom_smooth() ÁÍ¶Õ
-#+geom_smooth(method='lm') LRÁÍ¶Õ
+#+geom_point()  é»ž
+#+geom_line()   ç·š
+#+geom_smooth() è¶¨å‹¢
+#+geom_smooth(method='lm') LRè¶¨å‹¢
 
 score<-matrix$rating%>%sqrt()%>%sqrt()
 ggplot(matrix, aes(x = numforgame, y = score))+geom_smooth()
