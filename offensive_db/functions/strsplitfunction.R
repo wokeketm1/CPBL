@@ -1,4 +1,4 @@
-strsplitfunction<-function(x){
+﻿strsplitfunction<-function(x){
   
   grepgetpoint<-grep("[統][一][(][1-9]*[0-9][)][:]",x)
   x[grepgetpoint]<-gsub(pattern = "[統][一]",replacement = "##統一",x[grepgetpoint])

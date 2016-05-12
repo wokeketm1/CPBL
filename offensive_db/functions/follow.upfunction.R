@@ -1,5 +1,6 @@
-follow.upfunction=function(x)
+﻿follow.upfunction=function(x)
 {
+  ##利用當局最後的得分-該局每個打席前的得分
   #上半局
   up<-substr(away,regexpr("[(]", away)+1,regexpr("[)]", away)-1)%>%as.numeric()
   uppoint<-cbind(up[grep("[1-9]*[0-9][上]",inning)],grep("[1-9]*[0-9][上]",inning,value = TRUE))
