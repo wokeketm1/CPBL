@@ -5,11 +5,12 @@ library(taRifx)
 # 1. source all functions
 # remember add encoding = "UTF-8"
 source_all = function() {
-  c_function_name<-list.files("D:/CPBL/offensive_db/functions", pattern="*.R")
+  # c_function_name<-list.files("D:/CPBL/offensive_db/functions", pattern="*.R")
+  c_function_name<-list.files("E:/CPBL/offensive_db/functions", pattern="*.R")
   
   for (i in 1:length(c_function_name)) {
-    # function_path <- paste0("/Users/shipo/Documents/cpbl_project/offensive_db/functions/", c_function_name[i], "_function.R")
-    function_path <- paste0("D:/CPBL/offensive_db/functions/", c_function_name[i])
+    # function_path <- paste0("D:/CPBL/offensive_db/functions/", c_function_name[i])
+    function_path <- paste0("E:/CPBL/offensive_db/functions/", c_function_name[i])
     source(function_path, encoding = "UTF-8")
   }
 }
@@ -17,9 +18,11 @@ source_all()
 # 2. run the single_game function
 main_single_game = function(num_logfile) {
   # 2-1.load log_file
-  # log_path <- paste0("/Users/shipo/Documents/cpbl_project/logs/2014/例行賽", as.character(num_logfile), "(2014org).txt")
-  log_path <- paste0("D:/CPBL/logs/2014/例行賽", as.character(num_logfile), "(2014org).txt")
+  # log_path <- paste0("D:/CPBL/logs/2014/例行賽", as.character(num_logfile), "(2014org).txt")
+  log_path <- paste0("E:/CPBL/logs/2014/例行賽", as.character(num_logfile), "(2014org).txt")
   log_file <- readLines(log_path, encoding = "UTF-8")
+  log_file <- dictionaryfunction(log_file)
+  log_file <- strsplitfunction(log_file)
   log_file <- normalize_log_function(log_file)
   
   # 2-2. set the dummy list
@@ -92,18 +95,22 @@ offensive_db <- lapply(1:240, function(num_logfile) {
 
 # 4.merge offensive_db & anothercol
 
-#程式碼從這邊開始--------------------------------------------------------------------------------------------
+##程式碼從這邊開始--------------------------------------------------------------------------------------------
+#沒問題的場次
 inningnoproblem<-c(1:42,44:63,65:93,95:119,121:214,216:240)
+#設定NULL合併用
 output1 <- NULL
 #迴圈開始-----
 for (i in inningnoproblem){
   
   #讀取資料
   numforgame <- paste0(i)
-  x <- readLines(paste0("D:/CPBL/logs/2014/例行賽",numforgame,"(2014org).txt"),encoding="UTF-8")
-  
+  # x <- readLines(paste0("D:/CPBL/logs/2014/例行賽",numforgame,"(2014org).txt"),encoding="UTF-8")
+  x <- readLines(paste0("E:/CPBL/logs/2014/例行賽",numforgame,"(2014org).txt"),encoding="UTF-8")
   #統一格式
-  x          <- dictionaryfunction()
+  x          <- dictionaryfunction(x)
+  #切割比分為自主一列
+  x          <- strsplitfunction(x)
   
   #各欄位
   rowforgame <- c(1:length(x))
@@ -130,15 +137,17 @@ for (i in inningnoproblem){
 #迴圈結束------
 
 
-#例外加入
+##例外加入
 #例行賽94,120,215 局數有問題 #例行賽64 九上誤植成九下#列行賽43沒有三出局#例行賽114 69列分數登記有誤
 #迴圈開始------
 output2<-NULL
 extragame<-c(43,64,215,120,94)
 for (i in 1:length(extragame)){
-x <- readLines(paste0("D:/CPBL/logs/2014/例行賽",extragame[i],"(2014org).txt"),encoding="UTF-8")
+# x <- readLines(paste0("D:/CPBL/logs/2014/例行賽",extragame[i],"(2014org).txt"),encoding="UTF-8")
+x <- readLines(paste0("E:/CPBL/logs/2014/例行賽",extragame[i],"(2014org).txt"),encoding="UTF-8")
 #統一格式
-x          <- dictionaryfunction()
+x          <- dictionaryfunction(x)
+x          <- strsplitfunction(x)
 #各欄位
 numforgame <- extragame[i]
 rowforgame <- c(1:length(x))
@@ -172,7 +181,7 @@ anothercol<-anothercol[order(as.numeric(anothercol[,1])) , ]
 #merge anothercol offensive_db
 merge2table=cbind(anothercol,offensive_db)
 
-
+#調整輸出欄位
 ouputmatrix<-merge2table[,c(1:2,19,5,9:15,20:24,25,3,16)]
 
 
@@ -189,7 +198,9 @@ rowforextra<-matrix(1,length(writeuse[,1]))
 outputuse<-cbind(writeuse,rowforextra)
 outputuse<-outputuse[,c(1:2,18,3:17)]
 
-#View(head(outputuse))
+#log空白列清除
+outputuse<-outputuse[outputuse$log!="",]
+View(head(outputuse,10))
 # 6.Output
-write.csv(outputuse,paste0("C:/Users/Student/Desktop/output/output042303.csv"),row.names=FALSE)
- 
+# write.csv(outputuse,paste0("C:/Users/Student/Desktop/output/output042303.csv"),row.names=FALSE)
+

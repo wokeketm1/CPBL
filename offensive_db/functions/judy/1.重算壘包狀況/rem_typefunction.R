@@ -1,6 +1,6 @@
-﻿library(dplyr)
+library(dplyr)
 
-off_db_path <- "E:/CPBL/logs/1-130,141-180場_output042303.csv" 
+off_db_path <- "E:/CPBL/offensive_db/functions/judy/1.重算壘包狀況/input/2014_output0512.csv" 
 off_db <- read.csv(off_db_path, header=TRUE, sep=",")
 
 for(i in 1: nrow(off_db)){

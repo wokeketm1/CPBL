@@ -1,4 +1,4 @@
-dictionaryfunction=function(){
+dictionaryfunction=function(x){
 x <- gsub("比賽因雨於18：11暫停",replacement="",x)
 x <- gsub("比賽於18：30恢復進行",replacement="",x)
 x <- gsub("比賽因雨延至19:05開打",replacement="",x)
